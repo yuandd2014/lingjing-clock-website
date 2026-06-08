@@ -8,8 +8,7 @@
 
 ```
 website-site/
-├── index.html        # 主页 — Apple 风 Hero + 实时桌面渲染
-├── preview.html      # 预览 — 6 张"假截图"展示
+├── index.html        # 主页 — Apple 风 Hero + 真实录屏 GIF
 ├── changelog.html    # 更新日志 — 每次发布手动同步过来
 ├── download.html     # 下载 — 安装版 / 便携版
 ├── about.html        # 关于 — 项目由来 + 灵境UI 视觉 + 隐私
@@ -19,10 +18,10 @@ website-site/
 │   │   ├── apple.css   # 导航 + Hero + 按钮 + 卡片
 │   │   └── pages.css   # 各页特定样式
 │   ├── js/
-│   │   ├── showcase.js # 实时渲染"假桌面"
 │   │   └── nav.js      # 导航 + 滚动揭示
 │   └── img/
-│       └── favicon.svg
+│       ├── favicon.svg
+│       └── lingjing-demo.gif  # 真实录屏 GIF 主视觉
 └── README.md
 ```
 

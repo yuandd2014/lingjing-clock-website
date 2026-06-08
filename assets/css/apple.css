@@ -340,7 +340,7 @@
   .feature { min-height: 220px; padding: var(--s-5); }
 }
 
-/* === Hero 主视觉 — "假桌面" === */
+/* === Hero 主视觉 — 真实录屏 GIF === */
 .hero-mock {
   position: relative;
   max-width: 1080px;
@@ -348,7 +348,7 @@
   padding: 0 var(--s-5);
 }
 
-.mock-frame {
+.hero-gif-frame {
   position: relative;
   background: white;
   border-radius: var(--r-2xl);
@@ -357,122 +357,24 @@
     0 12px 32px rgba(0, 0, 0, 0.10),
     0 32px 80px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  aspect-ratio: 16 / 10;
   border: 1px solid var(--ink-100);
+  transition: transform 0.6s var(--ease-out), box-shadow 0.6s var(--ease-out);
 }
 
-.mock-toolbar {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  display: flex;
-  gap: 8px;
-  z-index: 2;
+.hero-gif-frame:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.05),
+    0 16px 40px rgba(0, 0, 0, 0.14),
+    0 40px 96px rgba(0, 0, 0, 0.10);
 }
 
-.mock-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+.hero-gif-frame img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
-.mock-dot-red { background: #ff5f57; }
-.mock-dot-amber { background: #febc2e; }
-.mock-dot-green { background: #28c840; }
-
-.mock-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, #ffffff 0%, #fafafc 100%);
-}
-
-/* === 假桌面组件 — JS 渲染 === */
-.mock-clock {
-  text-align: center;
-  font-family: var(--font-mono);
-  font-weight: 300;
-  font-size: clamp(60px, 12vw, 140px);
-  letter-spacing: -0.04em;
-  line-height: 1;
-  color: var(--ink-900);
-  font-variant-numeric: tabular-nums;
-}
-
-.mock-date {
-  margin-top: var(--s-4);
-  font-size: clamp(15px, 1.6vw, 18px);
-  color: var(--ink-500);
-  font-weight: 400;
-  letter-spacing: -0.005em;
-}
-
-.mock-lunar {
-  margin-top: 6px;
-  font-size: clamp(13px, 1.4vw, 16px);
-  color: var(--ink-300);
-  font-weight: 400;
-}
-
-.mock-corner {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: var(--r-md);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: var(--shadow-sm);
-  font-size: 14px;
-  color: var(--ink-700);
-}
-
-.mock-corner-tl {
-  top: 50px;
-  left: 24px;
-}
-
-.mock-corner-br {
-  bottom: 24px;
-  right: 24px;
-}
-
-.mock-weather-icon {
-  font-size: 24px;
-}
-
-.mock-temp {
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--ink-900);
-  font-variant-numeric: tabular-nums;
-}
-
-.mock-city {
-  font-size: 12px;
-  color: var(--ink-300);
-  margin-top: 2px;
-}
-
-.mock-character {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0071e3 0%, #af52de 50%, #ff375f 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 22px;
-  font-weight: 600;
-  box-shadow: 0 4px 16px rgba(0, 113, 227, 0.3);
-}
 
 /* === CTA — Apple 大块 === */
 .cta {
