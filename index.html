@@ -3,44 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>灵境时钟 LingJing Clock — 屏幕如镜, 光从内生</title>
-  <meta name="description" content="灵境时钟 LingJing Clock — Windows 桌面时钟应用。灵境UI / 灵镜光感, 时钟、天气、农历、每日一言、Live2D 角色一应俱全。" />
-  <meta name="theme-color" content="#06080d" />
-  <meta property="og:title" content="灵境时钟 LingJing Clock" />
-  <meta property="og:description" content="屏幕如镜, 光从内生。Windows 桌面时钟 · 灵境UI · 灵镜光感" />
-  <meta property="og:type" content="website" />
+  <title>灵境时钟 · LingJing Clock</title>
+  <meta name="description" content="灵境时钟 LingJing Clock — 让桌面, 有一面镜子。Windows 桌面时钟, 时分秒、农历、天气、Live2D, 一目了然。" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:title" content="灵境时钟 · LingJing Clock" />
+  <meta property="og:description" content="让桌面, 有一面镜子。" />
 
-  <!-- 字体 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
-
-  <!-- 灵境UI 样式 -->
   <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/glass.css" />
+  <link rel="stylesheet" href="assets/css/apple.css" />
   <link rel="stylesheet" href="assets/css/pages.css" />
-
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 </head>
 <body>
-  <!-- 灵镜光感背景 -->
-  <div class="bg-stage"></div>
-  <canvas id="particles-canvas"></canvas>
-  <div class="vignette"></div>
 
   <!-- 导航 -->
   <nav class="nav">
-    <div class="container nav-inner">
+    <div class="nav-inner">
       <a href="index.html" class="nav-brand">
         <span class="nav-brand-mark">灵</span>
-        <span>LINGJING</span>
+        <span>灵境时钟</span>
       </a>
       <div class="nav-links">
-        <a href="index.html" class="nav-link">首页</a>
-        <a href="screenshots.html" class="nav-link">预览</a>
-        <a href="download.html" class="nav-link">下载</a>
-        <a href="about.html" class="nav-link">关于</a>
-        <a href="https://github.com/yuandd2014/lingjing-clock" class="nav-link" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="index.html" class="nav-link" data-page="index.html">主页</a>
+        <a href="preview.html" class="nav-link" data-page="preview.html">预览</a>
+        <a href="changelog.html" class="nav-link" data-page="changelog.html">更新日志</a>
+        <a href="download.html" class="nav-link" data-page="download.html">下载</a>
+        <a href="about.html" class="nav-link" data-page="about.html">关于</a>
       </div>
       <button class="nav-toggle" aria-label="菜单">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -52,194 +40,134 @@
 
   <!-- Hero -->
   <header class="hero">
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="container hero-content">
-      <div class="hero-eyebrow reveal">
-        <span class="badge">
-          <span class="badge-dot"></span>
-          v1.0.0 · 灵镜光感
-        </span>
-      </div>
-      <h1 class="hero-title reveal">
-        <span class="gradient-text font-display">LingJing Clock</span>
-        <span class="hero-title-zh">灵境时钟</span>
+    <div class="container">
+      <p class="hero-eyebrow">LingJing Clock</p>
+      <h1 class="hero-title">
+        让桌面, 有一面镜子。
+        <span class="zh">屏幕如镜, 光从内生</span>
       </h1>
-      <p class="hero-tagline reveal">
-        屏幕如镜, <span class="accent">光从内生</span>。<br />
-        一面映照你桌面的镜子 — 时钟、天气、农历、每日一言、Live2D 角色,<br />
-        在毛玻璃与粒子之间, 时间有了温度。
+      <p class="hero-tagline">
+        时钟、天气、农历、Live2D 角色, 一切井然。<br />
+        一款安静地陪在你桌面角落的 Windows 时钟。
       </p>
-      <div class="hero-actions reveal">
+      <div class="hero-actions">
         <a href="download.html" class="btn btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-          </svg>
-          <span>立即下载</span>
+          免费下载 <span class="arrow">›</span>
         </a>
-        <a href="screenshots.html" class="btn btn-ghost">
-          <span>查看预览</span>
-        </a>
-        <a href="https://github.com/yuandd2014/lingjing-clock" class="btn btn-ghost" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z" />
-          </svg>
-          <span>源码</span>
-        </a>
+        <a href="preview.html" class="btn btn-ghost">看看长什么样</a>
       </div>
-      <div class="hero-meta reveal">
-        <span class="hero-meta-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-          Windows 10 / 11
-        </span>
-        <span class="hero-meta-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-          NSIS · 便携版
-        </span>
-        <span class="hero-meta-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.65 1.65 0 0 0-1.8-.3 1.65 1.65 0 0 0-1 1.5V21a2 2 0 0 1-4 0v-.1a1.65 1.65 0 0 0-1-1.5 1.65 1.65 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.65 1.65 0 0 0 .3-1.8 1.65 1.65 0 0 0-1.5-1H3a2 2 0 0 1 0-4h.1a1.65 1.65 0 0 0 1.5-1 1.65 1.65 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.65 1.65 0 0 0 1.8.3H9a1.65 1.65 0 0 0 1-1.5V3a2 2 0 0 1 4 0v.1a1.65 1.65 0 0 0 1 1.5 1.65 1.65 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.65 1.65 0 0 0-.3 1.8V9a1.65 1.65 0 0 0 1.5 1H21a2 2 0 0 1 0 4h-.1a1.65 1.65 0 0 0-1.5 1z"/></svg>
-          灵境UI · 灵镜光感
-        </span>
+
+      <!-- 主视觉 — 实时渲染的"假桌面" -->
+      <div class="hero-mock">
+        <div id="hero-mock"></div>
       </div>
     </div>
   </header>
 
-  <!-- 预览 -->
-  <section class="section preview">
+  <!-- 特性 — Apple 产品页风格 -->
+  <section class="section">
     <div class="container">
-      <div class="preview-stage reveal">
-        <div class="preview-toolbar">
-          <span class="preview-toolbar-dot"></span>
-          <span class="preview-toolbar-dot"></span>
-          <span class="preview-toolbar-dot"></span>
+      <p class="section-eyebrow">特性</p>
+      <h2 class="section-title">一目了然, 一应俱全。</h2>
+      <p class="section-subtitle">
+        从指针跳动的瞬间, 到节气的悄然轮转 — 桌面该有的温度, 这里都给你。
+      </p>
+
+      <div class="features">
+        <div class="feature feature-tinted-blue reveal">
+          <div>
+            <span class="feature-icon">🕐</span>
+            <h3 class="feature-name">时分秒 + 农历</h3>
+            <p class="feature-desc">大字数字时钟搭配农历日期、节气、干支纪年 — 屏幕上的中国传统历法, 一眼读懂。</p>
+          </div>
         </div>
-        <div class="preview-frame">
-          <div class="preview-placeholder">
-            <div class="preview-placeholder-icon">⌖</div>
-            <div>灵境时钟 · 实时界面</div>
-            <div style="opacity:.6">截图见 <a href="screenshots.html">预览页</a></div>
+        <div class="feature feature-tinted-pink reveal">
+          <div>
+            <span class="feature-icon">☁️</span>
+            <h3 class="feature-name">逐时天气预报</h3>
+            <p class="feature-desc">今日剩余小时 + 明日关键时段, 6 条数据完整呈现。城市级定位, 自动 / 手动两相宜。</p>
+          </div>
+        </div>
+        <div class="feature feature-tinted-amber reveal">
+          <div>
+            <span class="feature-icon">🌸</span>
+            <h3 class="feature-name">Live2D 角色</h3>
+            <p class="feature-desc">Hiyori 与志贵在你桌前待命, 鼠标交互、动作随机 — 工作间隙的小小慰藉。</p>
+          </div>
+        </div>
+        <div class="feature feature-tinted-violet reveal">
+          <div>
+            <span class="feature-icon">💬</span>
+            <h3 class="feature-name">每日一言</h3>
+            <p class="feature-desc">引言卡片伴你度过此刻的安静。古典到现代, 总有一句击中你。</p>
+          </div>
+        </div>
+        <div class="feature feature-tinted-blue reveal">
+          <div>
+            <span class="feature-icon">🌍</span>
+            <h3 class="feature-name">自动定位</h3>
+            <p class="feature-desc">浏览器定位 + IP 城市定位双重兜底。无需手动设置, 启动即知你所在。</p>
+          </div>
+        </div>
+        <div class="feature feature-tinted-mute reveal">
+          <div>
+            <span class="feature-icon">✨</span>
+            <h3 class="feature-name">灵境UI</h3>
+            <p class="feature-desc">毛玻璃、模糊发光、暗角 — 自研设计语言, 让桌面如镜, 光从内生。</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 核心特性 -->
-  <section class="section">
-    <div class="container">
-      <header class="section-header reveal">
-        <span class="section-eyebrow">CORE FEATURES</span>
-        <h2 class="section-title gradient-text">一应俱全, 各得其所</h2>
-        <p class="section-subtitle">从指针跳动的瞬间, 到节气的悄然轮转 — 桌面该有的温度, 这里都给你。</p>
-        <div class="divider"></div>
-      </header>
-      <div class="feature-grid">
-        <article class="glass feature-card reveal">
-          <div class="feature-icon">🕐</div>
-          <h3 class="feature-title">时分秒 + 农历</h3>
-          <p class="feature-desc">大字数字时钟搭配农历日期、节气、干支纪年 — 屏幕上的中国传统历法, 一眼读懂。</p>
-        </article>
-        <article class="glass feature-card reveal">
-          <div class="feature-icon">☁️</div>
-          <h3 class="feature-title">逐时天气预报</h3>
-          <p class="feature-desc">今日剩余小时 + 明日关键时段, 6 条数据完整呈现。城市级定位, 自动 / 手动两相宜。</p>
-        </article>
-        <article class="glass feature-card reveal">
-          <div class="feature-icon">🌸</div>
-          <h3 class="feature-title">Live2D 角色</h3>
-          <p class="feature-desc">Hiyori 与志贵在你桌前待命, 鼠标交互、动作随机 — 工作间隙的小小慰藉。</p>
-        </article>
-        <article class="glass feature-card reveal">
-          <div class="feature-icon">💬</div>
-          <h3 class="feature-title">每日一言</h3>
-          <p class="feature-desc">引言卡片伴你度过此刻的安静。古典到现代, 总有一句击中你。</p>
-        </article>
-        <article class="glass feature-card reveal">
-          <div class="feature-icon">🌍</div>
-          <h3 class="feature-title">自动定位</h3>
-          <p class="feature-desc">浏览器定位 + IP 城市定位双重兜底。无需手动设置, 启动即知你所在。</p>
-        </article>
-        <article class="glass feature-card reveal">
-          <div class="feature-icon">✨</div>
-          <h3 class="feature-title">灵镜光感</h3>
-          <p class="feature-desc">毛玻璃 + 粒子背景 + 模糊发光 + 暗角 — 自研设计语言, 让桌面如镜, 光从内生。</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 灵镜光感四子项 -->
-  <section class="section">
-    <div class="container">
-      <header class="section-header reveal">
-        <span class="section-eyebrow">LINGJING DESIGN LANGUAGE</span>
-        <h2 class="section-title gradient-text-warm">灵镜光感 · 四象归一</h2>
-        <p class="section-subtitle">不是简单的"漂亮", 而是一种系统化的设计语言 — 每一处光, 都有它的来处。</p>
-        <div class="divider"></div>
-      </header>
-      <div class="four-pillars">
-        <div class="glass pillar reveal">
-          <div class="pillar-num">01</div>
-          <div class="pillar-name">毛玻璃</div>
-          <div class="pillar-en">Frosted Glass</div>
-          <p class="pillar-desc">backdrop-filter: blur(40px) saturate(1.8) — 透过磨砂, 看见世界。</p>
-        </div>
-        <div class="glass pillar reveal">
-          <div class="pillar-num">02</div>
-          <div class="pillar-name">粒子背景</div>
-          <div class="pillar-en">Particle Field</div>
-          <p class="pillar-desc">百颗微光相互吸引 — 鼠标经过, 它们让路。</p>
-        </div>
-        <div class="glass pillar reveal">
-          <div class="pillar-num">03</div>
-          <div class="pillar-name">模糊发光</div>
-          <div class="pillar-en">Soft Glow</div>
-          <p class="pillar-desc">box-shadow 与 filter:blur 共舞, 让界面有了呼吸感。</p>
-        </div>
-        <div class="glass pillar reveal">
-          <div class="pillar-num">04</div>
-          <div class="pillar-name">暗角</div>
-          <div class="pillar-en">Vignette</div>
-          <p class="pillar-desc">径向渐变的最后一道工序 — 把目光引向中心。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
-  <section class="cta">
-    <div class="container">
-      <div class="glass glass-strong cta-card reveal">
-        <h2 class="cta-title gradient-text">让桌面, 有一面镜子</h2>
-        <p class="cta-desc">完全免费 · 开源 · 无广告 · 离线可用</p>
-        <div class="cta-actions">
-          <a href="download.html" class="btn btn-primary">
-            <span>下载 v1.0.0</span>
-          </a>
-          <a href="https://github.com/yuandd2014/lingjing-clock/releases" class="btn btn-ghost" target="_blank" rel="noopener">
-            <span>查看更新日志</span>
-          </a>
-        </div>
-      </div>
+  <div class="cta reveal">
+    <h2 class="cta-title">让桌面, 安静一点。</h2>
+    <p class="cta-subtitle">完全免费 · 开源 · 无广告 · Windows 10 / 11</p>
+    <div class="cta-actions">
+      <a href="download.html" class="btn btn-primary">免费下载 <span class="arrow">›</span></a>
+      <a href="changelog.html" class="btn btn-ghost">最近更新</a>
     </div>
-  </section>
+  </div>
 
   <!-- 页脚 -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-brand">LINGJING CLOCK</div>
-      <div class="footer-tagline">SCREEN AS A MIRROR, LIGHT FROM WITHIN</div>
-      <div class="footer-links">
-        <a href="https://github.com/yuandd2014/lingjing-clock" class="footer-link" target="_blank" rel="noopener">代码仓库</a>
-        <a href="https://github.com/yuandd2014/lingjing-clock/releases" class="footer-link" target="_blank" rel="noopener">发布页</a>
-        <a href="about.html" class="footer-link">关于项目</a>
-        <a href="https://github.com/yuandd2014/lingjing-clock/issues" class="footer-link" target="_blank" rel="noopener">问题反馈</a>
+      <div class="footer-grid">
+        <div>
+          <div class="nav-brand" style="margin-bottom:12px">
+            <span class="nav-brand-mark">灵</span>
+            <span style="color:var(--ink-900)">灵境时钟</span>
+          </div>
+          <p style="font-size:13px;color:var(--ink-500);max-width:280px;line-height:1.5">
+            一面映照你桌面的镜子。<br />
+            时分秒, 节气, 晴雨, 都在这里。
+          </p>
+        </div>
+        <div>
+          <div class="footer-col-title">产品</div>
+          <a class="footer-link" href="download.html">下载</a>
+          <a class="footer-link" href="preview.html">预览</a>
+          <a class="footer-link" href="changelog.html">更新日志</a>
+        </div>
+        <div>
+          <div class="footer-col-title">了解</div>
+          <a class="footer-link" href="about.html">关于</a>
+          <a class="footer-link" href="about.html#privacy">隐私</a>
+        </div>
+        <div>
+          <div class="footer-col-title">联系</div>
+          <a class="footer-link" href="https://github.com/yuandd2014/lingjing-clock" target="_blank" rel="noopener">代码仓库 ↗</a>
+        </div>
       </div>
-      <div class="footer-copyright">© 2026 yuandd2014 · MIT License</div>
+      <div class="footer-bottom">
+        <div>Copyright © 2026 灵境时钟</div>
+        <div>由开发者独立制作</div>
+      </div>
     </div>
   </footer>
 
-  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/showcase.js"></script>
   <script src="assets/js/nav.js"></script>
 </body>
 </html>

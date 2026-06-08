@@ -1,0 +1,606 @@
+/* ============================================
+   Apple 风组件 — 导航 / Hero / 按钮 / 卡片
+   ============================================ */
+
+/* === 顶部导航 — Apple 玻璃顶栏 === */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  height: 52px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 var(--s-5);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-900);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.nav-brand-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #0071e3 0%, #af52de 50%, #ff375f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-700);
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--ink-900);
+}
+
+.nav-link.active {
+  color: var(--ink-900);
+  font-weight: 500;
+}
+
+.nav-toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: var(--ink-700);
+}
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--s-3) var(--s-5);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--ink-100);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s var(--ease-out);
+  }
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-link {
+    padding: 10px 12px;
+  }
+}
+
+/* === Hero — Apple 产品页 === */
+.hero {
+  padding: var(--s-9) 0 var(--s-8);
+  text-align: center;
+  position: relative;
+  background: var(--bg);
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 17px;
+  color: var(--ink-500);
+  margin-bottom: var(--s-3);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.hero-title {
+  margin: 0 auto;
+  max-width: 920px;
+}
+
+.hero-title .zh {
+  display: block;
+  font-size: 0.5em;
+  font-weight: 500;
+  color: var(--ink-500);
+  margin-top: 0.4em;
+  letter-spacing: 0.05em;
+}
+
+.hero-tagline {
+  max-width: 720px;
+  margin: var(--s-5) auto 0;
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: var(--ink-500);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--s-3);
+  justify-content: center;
+  margin-top: var(--s-6);
+  flex-wrap: wrap;
+}
+
+/* === 按钮 — Apple 胶囊 === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: var(--r-pill);
+  transition: all 0.25s var(--ease-out);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  min-height: 44px;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: white;
+}
+.btn-primary:hover {
+  background: var(--blue-deep);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--ink-900);
+  color: white;
+}
+.btn-secondary:hover {
+  background: #000;
+  color: white;
+}
+
+.btn-tinted {
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+.btn-tinted:hover {
+  background: #d6e8ff;
+  color: var(--blue-deep);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-700);
+}
+.btn-ghost:hover {
+  background: var(--ink-50);
+  color: var(--ink-900);
+}
+
+.btn .arrow {
+  font-size: 16px;
+  transition: transform 0.25s var(--ease-out);
+}
+.btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* === 章节 === */
+.section {
+  padding: var(--s-9) 0;
+  position: relative;
+}
+
+.section-tight {
+  padding: var(--s-7) 0;
+}
+
+.section-eyebrow {
+  display: block;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--ink-500);
+  margin-bottom: var(--s-3);
+  letter-spacing: -0.01em;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--s-4);
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--s-8);
+  font-size: clamp(18px, 2vw, 22px);
+  color: var(--ink-500);
+  line-height: 1.45;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* === 卡片 — Apple 圆角 === */
+.card {
+  background: var(--bg);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-tinted-blue {
+  background: var(--bg-tint-blue);
+}
+.card-tinted-pink {
+  background: var(--bg-tint-pink);
+}
+.card-tinted-amber {
+  background: var(--bg-tint-amber);
+}
+.card-tinted-violet {
+  background: var(--bg-tint-violet);
+}
+.card-tinted-mute {
+  background: var(--bg-mute);
+}
+
+/* === 特性网格 — Apple 产品页 === */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-4);
+  margin-top: var(--s-7);
+}
+
+.feature {
+  background: var(--bg);
+  border-radius: var(--r-xl);
+  padding: var(--s-6);
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feature-tinted-blue { background: var(--bg-tint-blue); }
+.feature-tinted-pink { background: var(--bg-tint-pink); }
+.feature-tinted-amber { background: var(--bg-tint-amber); }
+.feature-tinted-violet { background: var(--bg-tint-violet); }
+
+.feature-icon {
+  font-size: 40px;
+  margin-bottom: var(--s-4);
+  display: block;
+}
+
+.feature-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink-900);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.feature-desc {
+  font-size: 16px;
+  color: var(--ink-500);
+  line-height: 1.5;
+  max-width: 380px;
+}
+
+@media (max-width: 768px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .feature { min-height: 220px; padding: var(--s-5); }
+}
+
+/* === Hero 主视觉 — "假桌面" === */
+.hero-mock {
+  position: relative;
+  max-width: 1080px;
+  margin: var(--s-8) auto 0;
+  padding: 0 var(--s-5);
+}
+
+.mock-frame {
+  position: relative;
+  background: white;
+  border-radius: var(--r-2xl);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 12px 32px rgba(0, 0, 0, 0.10),
+    0 32px 80px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--ink-100);
+}
+
+.mock-toolbar {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.mock-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+}
+
+.mock-dot-red { background: #ff5f57; }
+.mock-dot-amber { background: #febc2e; }
+.mock-dot-green { background: #28c840; }
+
+.mock-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafc 100%);
+}
+
+/* === 假桌面组件 — JS 渲染 === */
+.mock-clock {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: clamp(60px, 12vw, 140px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.mock-date {
+  margin-top: var(--s-4);
+  font-size: clamp(15px, 1.6vw, 18px);
+  color: var(--ink-500);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+
+.mock-lunar {
+  margin-top: 6px;
+  font-size: clamp(13px, 1.4vw, 16px);
+  color: var(--ink-300);
+  font-weight: 400;
+}
+
+.mock-corner {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--r-md);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
+  font-size: 14px;
+  color: var(--ink-700);
+}
+
+.mock-corner-tl {
+  top: 50px;
+  left: 24px;
+}
+
+.mock-corner-br {
+  bottom: 24px;
+  right: 24px;
+}
+
+.mock-weather-icon {
+  font-size: 24px;
+}
+
+.mock-temp {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.mock-city {
+  font-size: 12px;
+  color: var(--ink-300);
+  margin-top: 2px;
+}
+
+.mock-character {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0071e3 0%, #af52de 50%, #ff375f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 113, 227, 0.3);
+}
+
+/* === CTA — Apple 大块 === */
+.cta {
+  padding: var(--s-10) 0 var(--s-9);
+  text-align: center;
+  background: var(--bg-soft);
+  border-radius: var(--r-2xl);
+  margin: 0 var(--s-5);
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-title {
+  font-size: clamp(36px, 5vw, 56px);
+  margin-bottom: var(--s-3);
+  letter-spacing: -0.03em;
+}
+
+.cta-subtitle {
+  font-size: 20px;
+  color: var(--ink-500);
+  margin-bottom: var(--s-6);
+  font-weight: 400;
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--s-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* === 标签栏 / 链接列表 === */
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.link-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--s-4) 0;
+  border-bottom: 1px solid var(--ink-100);
+  text-decoration: none;
+  color: var(--ink-900);
+  transition: opacity 0.2s;
+}
+
+.link-item:hover {
+  opacity: 0.7;
+}
+
+.link-item-meta {
+  font-size: 14px;
+  color: var(--ink-500);
+}
+
+.link-item-arrow {
+  color: var(--ink-300);
+  font-size: 18px;
+}
+
+/* === 页脚 === */
+.footer {
+  padding: var(--s-7) 0 var(--s-6);
+  background: var(--bg-soft);
+  border-top: 1px solid var(--ink-100);
+  margin-top: var(--s-9);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--s-6);
+  margin-bottom: var(--s-6);
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.footer-col-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-900);
+  margin-bottom: var(--s-3);
+  letter-spacing: 0;
+}
+
+.footer-link {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-500);
+  padding: 4px 0;
+}
+
+.footer-link:hover {
+  color: var(--ink-900);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--ink-100);
+  padding-top: var(--s-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--ink-300);
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+}
+
+/* === 浮动效果 — Apple 微妙 === */
+.float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
