@@ -311,6 +311,7 @@
 .feature-tinted-pink { background: var(--bg-tint-pink); }
 .feature-tinted-amber { background: var(--bg-tint-amber); }
 .feature-tinted-violet { background: var(--bg-tint-violet); }
+.feature-tinted-mint { background: var(--bg-tint-mint); }
 
 .feature-icon {
   font-size: 40px;
