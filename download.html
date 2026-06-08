@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>下载 · 灵境时钟 LingJing Clock</title>
+  <meta name="description" content="下载 灵境时钟 LingJing Clock — Windows 桌面时钟应用安装包与便携版, 含 SHA256 校验。" />
+  <meta name="theme-color" content="#06080d" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/glass.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+</head>
+<body>
+  <div class="bg-stage"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div class="vignette"></div>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-mark">灵</span>
+        <span>LINGJING</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="screenshots.html" class="nav-link">预览</a>
+        <a href="download.html" class="nav-link">下载</a>
+        <a href="about.html" class="nav-link">关于</a>
+        <a href="https://github.com/yuandd2014/lingjing-clock" class="nav-link" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <header class="about-hero">
+    <div class="container">
+      <div class="badge reveal" style="margin-bottom:24px">
+        <span class="badge-dot"></span>
+        v1.0.0 · 2026
+      </div>
+      <h1 class="section-title reveal gradient-text">下载</h1>
+      <p class="section-subtitle reveal">
+        选择适合你的安装方式 — 所有版本均含 SHA256 校验, 请放心使用。
+      </p>
+      <div class="divider reveal"></div>
+    </div>
+  </header>
+
+  <!-- 下载项 -->
+  <section class="section" style="padding-top:24px">
+    <div class="container" style="max-width:920px">
+
+      <!-- 安装版 -->
+      <div class="glass download-card reveal">
+        <div class="dl-row">
+          <div class="dl-icon">⚙️</div>
+          <div class="dl-info">
+            <div class="dl-info-name">安装版 · NSIS</div>
+            <div class="dl-info-meta">
+              <span>88.67 MB</span>
+              <span>.exe</span>
+              <span>Windows 10 / 11 · x64</span>
+            </div>
+          </div>
+          <div class="dl-action">
+            <a class="btn btn-primary" href="https://github.com/yuandd2014/lingjing-clock/releases/download/v1.0.0/LingJing.Clock.Setup.1.0.0.exe" target="_blank" rel="noopener">
+              <span>下载</span>
+            </a>
+          </div>
+        </div>
+        <div class="hash-block">
+          <div class="hash-label">
+            <span>SHA256</span>
+            <button class="hash-copy" data-target="#hash-installer">复制</button>
+          </div>
+          <div class="hash-value" id="hash-installer">f4662261e946bda031a0b55f4adfc625e52023943297f5452e176fbc44847171</div>
+        </div>
+      </div>
+
+      <!-- 便携版 -->
+      <div class="glass download-card reveal">
+        <div class="dl-row">
+          <div class="dl-icon">📦</div>
+          <div class="dl-info">
+            <div class="dl-info-name">便携版 · Portable</div>
+            <div class="dl-info-meta">
+              <span>88.45 MB</span>
+              <span>.exe</span>
+              <span>免安装 · 双击即用</span>
+            </div>
+          </div>
+          <div class="dl-action">
+            <a class="btn btn-primary" href="https://github.com/yuandd2014/lingjing-clock/releases/download/v1.0.0/LingJingClock-Portable.exe" target="_blank" rel="noopener">
+              <span>下载</span>
+            </a>
+          </div>
+        </div>
+        <div class="hash-block">
+          <div class="hash-label">
+            <span>SHA256</span>
+            <button class="hash-copy" data-target="#hash-portable">复制</button>
+          </div>
+          <div class="hash-value" id="hash-portable">0852f907fe9cbf0adccfa3b1a63333e21d284c1bb31d44781c3d13131c52619a</div>
+        </div>
+      </div>
+
+      <!-- blockmap -->
+      <div class="glass download-card reveal">
+        <div class="dl-row">
+          <div class="dl-icon">🗺️</div>
+          <div class="dl-info">
+            <div class="dl-info-name">增量更新 blockmap</div>
+            <div class="dl-info-meta">
+              <span>95.79 KB</span>
+              <span>.blockmap</span>
+              <span>electron-updater 增量校验</span>
+            </div>
+          </div>
+          <div class="dl-action">
+            <a class="btn btn-ghost" href="https://github.com/yuandd2014/lingjing-clock/releases/download/v1.0.0/LingJing.Clock.Setup.1.0.0.exe.blockmap" target="_blank" rel="noopener">
+              <span>下载</span>
+            </a>
+          </div>
+        </div>
+        <div class="hash-block">
+          <div class="hash-label">
+            <span>SHA256</span>
+            <button class="hash-copy" data-target="#hash-blockmap">复制</button>
+          </div>
+          <div class="hash-value" id="hash-blockmap">d71affa8be3f95dfe191ab4219cab0ca851f38ac79783ee06f84fa189a43a322</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 校验步骤 -->
+  <section class="section">
+    <div class="container" style="max-width:920px">
+      <header class="section-header reveal">
+        <span class="section-eyebrow">VERIFY</span>
+        <h2 class="section-title gradient-text-warm">校验你的下载</h2>
+        <p class="section-subtitle">为安全起见, 下载完成后请比对 SHA256 哈希值。</p>
+        <div class="divider"></div>
+      </header>
+
+      <div class="verify-steps">
+        <div class="verify-step reveal">
+          <div class="verify-step-title">下载并打开 PowerShell</div>
+          <p style="color:var(--frost-200)">在下载文件所在目录打开 PowerShell。</p>
+        </div>
+        <div class="verify-step reveal">
+          <div class="verify-step-title">运行 Get-FileHash</div>
+          <p style="color:var(--frost-200)">将下方命令中的 <code style="display:inline;padding:2px 6px">FILE_NAME</code> 替换为实际文件名:</p>
+          <code>Get-FileHash .\FILE_NAME -Algorithm SHA256</code>
+        </div>
+        <div class="verify-step reveal">
+          <div class="verify-step-title">比对哈希值</div>
+          <p style="color:var(--frost-200)">将输出中的 Hash 字段与上方的 SHA256 比对, 一致即为完整无误。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 历史版本 -->
+  <section class="section">
+    <div class="container" style="max-width:920px">
+      <div class="glass glass-strong cta-card reveal" style="text-align:center">
+        <h2 class="cta-title gradient-text">历史版本</h2>
+        <p class="cta-desc">所有发布版本、变更记录、回滚安装包, 都在 GitHub Releases。</p>
+        <div class="cta-actions">
+          <a href="https://github.com/yuandd2014/lingjing-clock/releases" class="btn btn-primary" target="_blank" rel="noopener">
+            <span>查看 Releases</span>
+          </a>
+          <a href="https://github.com/yuandd2014/lingjing-clock" class="btn btn-ghost" target="_blank" rel="noopener">
+            <span>访问仓库</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">LINGJING CLOCK</div>
+      <div class="footer-tagline">SCREEN AS A MIRROR, LIGHT FROM WITHIN</div>
+      <div class="footer-links">
+        <a href="https://github.com/yuandd2014/lingjing-clock" class="footer-link" target="_blank" rel="noopener">代码仓库</a>
+        <a href="https://github.com/yuandd2014/lingjing-clock/releases" class="footer-link" target="_blank" rel="noopener">发布页</a>
+        <a href="about.html" class="footer-link">关于项目</a>
+        <a href="https://github.com/yuandd2014/lingjing-clock/issues" class="footer-link" target="_blank" rel="noopener">问题反馈</a>
+      </div>
+      <div class="footer-copyright">© 2026 yuandd2014 · MIT License</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/nav.js"></script>
+</body>
+</html>
