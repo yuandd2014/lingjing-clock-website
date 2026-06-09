@@ -65,6 +65,28 @@
               <li>删除全屏按钮 + F11/双击全屏</li>
               <li>设置持久化到 localStorage, 启动自动恢复</li>
             </ul>
+
+            <div class="changelog-fix" style="margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(255, 245, 235, 0.92), rgba(255, 235, 220, 0.88)); border-radius: 16px; border-left: 4px solid #f59e0b;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                <span style="font-size: 20px;">🔧</span>
+                <strong style="color: #92400e; font-size: 16px;">已于 2026-06-09 重打包修复</strong>
+                <span style="font-size: 12px; padding: 3px 10px; background: #f59e0b; color: white; border-radius: 12px; font-weight: 600;">链接不变, 内容更新</span>
+              </div>
+              <p style="margin: 0 0 12px 0; color: #78350f; line-height: 1.6;">
+                原 v1.0.1 installer 实际有一处 bug: <code style="background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px;">js/quotes.js</code> 文件末尾截断, 同时 1265 条名言里 788 条是《易经》卦爻辞重复 11 次, 导致<strong>每日一言永远只显示 fallback "学而不思则罔, 思而不学则殆"</strong>, 30 天不重复算法从未生效。
+              </p>
+              <p style="margin: 0 0 12px 0; color: #78350f; line-height: 1.6;">
+                本次重打包已修复:
+              </p>
+              <ul style="margin: 0 0 12px 0; color: #78350f; line-height: 1.7; padding-left: 20px;">
+                <li><code style="background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px;">quotes.js</code> 末尾补闭合, module 加载恢复正常</li>
+                <li>名言去重 1265 → 477 unique, 《易经》重复段全部清除</li>
+                <li>30 天不重复算法现已真正生效 (Node 沙箱测试 35 天都不同)</li>
+              </ul>
+              <p style="margin: 0; color: #78350f; line-height: 1.6; font-size: 14px;">
+                <strong>已下载 v1.0.1 的用户</strong>: 请重新下载覆盖, 装上后每日一言功能即可恢复。<a href="download.html" style="color: #92400e; font-weight: 600; text-decoration: underline;">前往下载页 →</a>
+              </p>
+            </div>
           </div>
         </article>
 
