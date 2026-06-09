@@ -51,6 +51,25 @@
 
         <article class="changelog-entry reveal">
           <div class="changelog-meta">
+            <span class="changelog-version">v1.1.0</span>
+            <span class="changelog-date">2026 · 06 · 09</span>
+            <span class="changelog-tag">新主功能</span>
+          </div>
+          <h2 class="changelog-title">灵境 Onboarding — 让首次启动也有仪式感。</h2>
+          <div class="changelog-body">
+            <ul>
+              <li>🌅 <strong>首次启动毛玻璃欢迎页</strong> — 应用启动时 (仅一次) 弹出全屏毛玻璃引导, 1.4s 冷白月光光毯横扫入场, 3 张引导卡 (右下角热区 / 设置面板 / 快捷键) 错峰淡入</li>
+              <li>✨ <strong>"重新显示欢迎页" 入口</strong> — 设置面板底部加链接, 一键重看 Onboarding</li>
+              <li>💫 <strong>主按钮点击 ripple</strong> + 卡片 hover glow + 主按钮呼吸动效</li>
+              <li>可访问性 — <code>role="dialog"</code> <code>aria-modal="true"</code>, 焦点自动跳到主按钮, 关闭时还原; <code>prefers-reduced-motion</code> 兜底</li>
+              <li>键盘 — <kbd>Esc</kbd> 关闭 (等同"稍后再说") / <kbd>Enter</kbd> 触发"开始使用"</li>
+              <li>异常兜底 — localStorage 写失败不阻断应用, 异常时序下 flag 仍 atomic 写</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="changelog-entry reveal">
+          <div class="changelog-meta">
             <span class="changelog-version">v1.0.1</span>
             <span class="changelog-date">2026 · 06 · 08</span>
             <span class="changelog-tag">增强</span>
