@@ -51,6 +51,26 @@
 
         <article class="changelog-entry reveal">
           <div class="changelog-meta">
+            <span class="changelog-version">v1.2.0</span>
+            <span class="changelog-date">2026 · 06 · 09</span>
+            <span class="changelog-tag">新主功能</span>
+          </div>
+          <h2 class="changelog-title">灵境 安装仪式 + 自动更新 — 让升级也变得轻巧。</h2>
+          <div class="changelog-body">
+            <ul>
+              <li>🎁 <strong>灵境 安装仪式 (Splash)</strong> — 复制文件完成后, 灵境时钟自身弹一个 480×360 居中圆角毛玻璃 splash 仪式页: 1.4s 冷白月光光毯 + 灵字 Logo 浮呼吸 + 紫青极光进度条 + 4.5s 自动退场</li>
+              <li>🖼️ <strong>NSIS 安装器品牌化</strong> — 头图 164×55 + 侧栏 164×314 + 安装器图标 256×256 + 头图图标 32×32 全部烧灵境品牌色 (紫青极光渐变 + 灵字 Logo)</li>
+              <li>⚙️ <strong>安装选项页 (nsDialogs 自绘)</strong> — 路径选择后, 安装前弹一个"安装选项"页, 3 个勾选: <strong>启用自动检查更新 (推荐, 默认勾上)</strong> + 创建桌面快捷方式 + 创建开始菜单快捷方式; 旁注明确告知"需要联网获取新版本, 您随时可在 设置 中关闭"</li>
+              <li>🔔 <strong>自动检查更新 (electron-updater)</strong> — 启动 6s 后静默 <code>checkForUpdates()</code>, 有更新后台下载, 装好弹非阻塞 toast (右上角毛玻璃卡片); <strong>不强制重启</strong>, 用户点"立即重启"才生效</li>
+              <li>📜 <strong>精简用户协议 (LICENSE.txt)</strong> — ~200 字, 4 条 (自由使用 / 不保证质量 / 数据归属 / 反馈与贡献), 不堆诱导分享 / 争议仲裁 / 冗长免责条款</li>
+              <li>🪟 <strong>自定义 Welcome / Finish / Unwelcome 页</strong> — 灵境色头图 + 标题, 装完引导"立即体验灵境时钟"</li>
+              <li>设置 → 系统更新 — "自动检查更新"开关 + "立即检查更新"按钮, 装时勾选值同步到 app</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="changelog-entry reveal">
+          <div class="changelog-meta">
             <span class="changelog-version">v1.1.0</span>
             <span class="changelog-date">2026 · 06 · 09</span>
             <span class="changelog-tag">新主功能</span>
