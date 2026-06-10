@@ -259,6 +259,29 @@
   transform: translateY(-4px);
 }
 
+.value-card.banner {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-5);
+  padding: var(--s-6) var(--s-7);
+  background: linear-gradient(135deg, rgba(219, 234, 254, 0.55), rgba(224, 231, 255, 0.45));
+  border: 1px solid rgba(67, 56, 202, 0.18);
+}
+
+.value-card.banner .value-icon {
+  font-size: 48px;
+  margin-bottom: 0;
+  flex-shrink: 0;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.value-card.banner .value-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .value-icon {
   font-size: 36px;
   margin-bottom: var(--s-3);
