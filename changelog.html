@@ -51,9 +51,43 @@
 
         <article class="changelog-entry reveal">
           <div class="changelog-meta">
-            <span class="changelog-version">v1.2.1</span>
+            <span class="changelog-version">v1.3.0</span>
             <span class="changelog-date">2026-06-10</span>
             <span class="changelog-tag" style="background: linear-gradient(135deg, #dbeafe, #e0e7ff); color: #4338ca;">最新</span>
+          </div>
+          <h2 class="changelog-title">主题色 — 让灵境也跟你的眼睛。</h2>
+          <div class="changelog-body">
+            <ul>
+              <li>🎨 <strong>主题色切换 (8 色灵境品牌色)</strong> — 设置面板新增 "主题" 卡片, 8 个灵境品牌色可选 (极光紫 / 薄荷绿 / 暗金 / 冰川蓝 / 哥特灰 / 蜜桃粉 / 电波青 / 甜橙); 切主题色 → 4 个 button 背景 + 1 spinner 边框 + 1 link hover 原子切换, 屏幕不闪</li>
+              <li>🔖 <strong>Splash 版本号动态化</strong> — 之前启动模式 splash 上 2 处版本号不一致 (splash.html 硬编码 v1.2.0 + splash.js tagline 硬编码 v1.2.1); 现在统一从 <code>package.json</code> → <code>app.getVersion()</code> → URL <code>?v=</code> → splash.js 动态填 <code>.splash-version</code> 元素, 唯一来源, 永远一致</li>
+            </ul>
+            <div class="changelog-fix" style="margin-top: 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(255, 245, 235, 0.92), rgba(255, 235, 220, 0.88)); border-radius: 16px; border-left: 4px solid #f59e0b;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                <span style="font-size: 20px;">🔧</span>
+                <strong style="color: #92400e; font-size: 16px;">已砍功能</strong>
+                <span style="font-size: 12px; padding: 3px 10px; background: #f59e0b; color: white; border-radius: 12px; font-weight: 600;">字体大小</span>
+              </div>
+              <p style="margin: 0; color: #78350f; line-height: 1.6;">
+                v1.3.0 推 3 轮 bug 后决定砍掉"字体大小"功能, 主屏字体大小维持 160 / 24 / 72 / 42 / 48 px 不变; 主题色 (8 色切换) 完整保留。
+              </p>
+            </div>
+            <div class="changelog-fix" style="margin-top: 16px; padding: 20px 24px; background: linear-gradient(135deg, rgba(255, 245, 235, 0.92), rgba(255, 235, 220, 0.88)); border-radius: 16px; border-left: 4px solid #f59e0b;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                <span style="font-size: 20px;">🖼️</span>
+                <strong style="color: #92400e; font-size: 16px;">品牌资产复用 v1.2.0</strong>
+              </div>
+              <p style="margin: 0; color: #78350f; line-height: 1.6;">
+                NSIS 安装器头图 / 侧栏 / 图标复用 v1.2.0 品牌素材 (跟 v1.2.1 模式一致); 计划 v1.3.1 PATCH 时重烧新一版。
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="changelog-entry reveal">
+          <div class="changelog-meta">
+            <span class="changelog-version">v1.2.1</span>
+            <span class="changelog-date">2026-06-10</span>
+            <span class="changelog-tag" style="background: linear-gradient(135deg, #f1f5f9, #e2e8f0); color: #475569;">前版</span>
           </div>
           <h2 class="changelog-title">自动更新 — 让您永远不落下新版本。</h2>
           <div class="changelog-body">
