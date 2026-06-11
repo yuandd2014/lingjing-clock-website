@@ -4,15 +4,15 @@
 
 这是 [灵境时钟 LingJing Clock](https://github.com/yuandd2014/lingjing-clock) 的官方宣传站点, 面向普通用户。
 
-**当前版本 · v1.3.1** — Apple 风 UI 大幅升级 (官网 5 页 + 主仓 firstrun/settings 重做) + 安装包 brand assets 重烧
+**当前版本 · v1.3.2** — Apple 风 UI 大幅升级 (官网 5 页 + 主仓 firstrun/settings 重做) + 安装包 brand assets 重烧
 
-[![下载 v1.3.1](https://img.shields.io/badge/下载-v1.3.1-0071e3?style=for-the-badge)](https://yuandd2014.github.io/lingjing-clock-website/download.html)
+[![下载 v1.3.2](https://img.shields.io/badge/下载-v1.3.2-0071e3?style=for-the-badge)](https://yuandd2014.github.io/lingjing-clock-website/download.html)
 [![主仓](https://img.shields.io/badge/主仓-lingjing--clock-8e8e93?style=flat-square)](https://github.com/yuandd2014/lingjing-clock)
 [![更新日志](https://img.shields.io/badge/更新日志-changelog-34c759?style=flat-square)](changelog.html)
 
 ---
 
-## 站点结构 (v1.3.1)
+## 站点结构 (v1.3.2)
 
 ```
 website-site/
@@ -50,7 +50,7 @@ website-site/
 3. `index.html` — 如果是大版本, 可更新"特性"列表 (按"这次更新"小节)
 4. `README.md` — 当前版本号徽章 (顶部) 改为新版本号
 
-> 💡 当前 `LingJing.Clock.Setup.1.3.0.exe` 安装包 89 MB · `LingJingClock-Portable.exe` 便携包 89 MB
+> 💡 当前 `LingJing.Clock.Setup.1.3.2.exe` 安装包 174 MB · `LingJingClock-Portable.exe` 便携包 174 MB
 
 ## 本地预览
 
