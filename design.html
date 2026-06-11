@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>设计语言 · 灵境UI · 灵境时钟</title>
+  <meta name="description" content="灵境UI — 一面镜子, 一束光。我们把光拆成四象, 让桌面安静地陪着你。" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/apple.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-mark">灵</span>
+        <span>灵境时钟</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-page="index.html">主页</a>
+        <a href="changelog.html" class="nav-link" data-page="changelog.html">更新日志</a>
+        <a href="download.html" class="nav-link" data-page="download.html">下载</a>
+        <a href="about.html" class="nav-link" data-page="about.html">关于</a>
+        <a href="design.html" class="nav-link" data-page="design.html">设计</a>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="design-hero">
+    <div class="container">
+      <p class="hero-eyebrow">灵境UI · 设计语言</p>
+      <h1 class="design-hero-title">一面镜子, 一束光。</h1>
+      <p class="design-hero-subtitle">我们把光拆成四象, 让桌面安静地陪着你。</p>
+
+      <!-- 大色块 (4 token 合 1 张) -->
+      <div class="design-hero-canvas">
+        <div class="canvas-glass"></div>
+        <div class="canvas-particles">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="canvas-glow"></div>
+        <div class="canvas-vignette"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 8 色主题色 -->
+  <section class="section">
+    <div class="container">
+      <p class="section-eyebrow">主题色</p>
+      <h2 class="section-title">8 套, 各自有性格。</h2>
+      <p class="section-subtitle">点开设置, 选一个合适的, 整个界面的强调色跟着换, 不闪屏。</p>
+
+      <div class="design-color-grid">
+        <div class="design-color-card reveal" style="--swatch-from: #6366f1; --swatch-to: #af52de;">
+          <div class="design-color-swatch"></div>
+          <div class="design-color-name">极光紫</div>
+          <div class="design-color-en">Aurora Purple</div>
+          <p class="design-color-when">夜晚加班, 想被光陪着</p>
+        </div>
+        <div class="design-color-card reveal" style="--swatch-from: #34c759; --swatch-to: #4fe0b0;">
+          <div class="design-color-swatch"></div>
+          <div class="design-color-name">薄荷</div>
+          <div class="design-color-en">Mint</div>
+          <p class="design-color-when">白天写代码, 想清新</p>
+        </div>
+        <div class="design-color-card reveal" style="--swatch-from: #c89b3c; --swatch-to: #f4d03f;">
+          <div class="design-color-swatch"></div>
+          <div class="design-color-name">黄昏金</div>
+          <div class="design-color-en">Dusk Gold</div>
+          <p class="design-color-when">夕阳下, 想被温暖裹着</p>
+        </div>
+        <div class="design-color-card reveal" style="--swatch-from: #0071e3; --swatch-to: #6fb1fc;">
+          <div class="design-color-swatch"></div>
+          <div class="design-color-name">冰川蓝</div>
+          <div class="design-color-en">Glacier Blue</div>
+          <p class="design-color-when">深冬早晨, 想被冷空气叫醒</p>
+        </div>
+        <div class="design-color-card reveal" style="--swatch-from: #4a4e69; --swatch-to: #8b7e74;">
+          <div class="design-color-swatch"></div>
+          <div class="design-color-name">哥特灰</div>
+          <div class="design-color-en">Gothic Grey</div>
+          <p class="design-color-when">写字多, 想眼睛舒服</p>
+        </div>
+        <div class="design-color-card reveal" style="--swatch-from: #ff7e9b; --swatch-to: #ffafaf;">
+          <div class="design-color-swatch"></div>
+          <div class="design-color-name">桃粉</div>
+          <div class="design-color-en">Peach Pink</div>
+          <p class="design-color-when">写日记, 想被温柔包裹</p>
+        </div>
+        <div class="design-color-card reveal" style="--swatch-from: #00b4d8; --swatch-to: #48cae4;">
+          <div class="design-color-swatch"></div>
+          <div class="design-color-name">海潮青</div>
+          <div class="design-color-en">Wave Cyan</div>
+          <p class="design-color-when">看海, 想听见浪</p>
+        </div>
+        <div class="design-color-card reveal" style="--swatch-from: #ff9f43; --swatch-to: #ffaf60;">
+          <div class="design-color-swatch"></div>
+          <div class="design-color-name">蜜橙</div>
+          <div class="design-color-en">Sweet Orange</div>
+          <p class="design-color-when">饿了, 想被甜点亮</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 视觉 token -->
+  <section class="section" style="background: linear-gradient(180deg, transparent, rgba(0,113,227,0.04));">
+    <div class="container">
+      <p class="section-eyebrow">视觉四象</p>
+      <h2 class="section-title">毛玻璃 / 粒子 / 发光 / 暗角</h2>
+      <p class="section-subtitle">每一种, 都是对"光"的一次拆解。</p>
+
+      <div class="design-token-list">
+
+        <div class="design-token-row reveal">
+          <div class="design-token-swatch token-glass-swatch">
+            <div class="token-glass-inner"></div>
+          </div>
+          <div class="design-token-meta">
+            <div class="design-token-name">毛玻璃 <span class="design-token-en">Frosted Glass</span></div>
+            <p class="design-token-desc">背景虚化 18 倍, 颜色加浓 1.8 倍 — 信息卡片背后, 桌面壁纸柔焦透出, 像被蒙了层薄雾。</p>
+          </div>
+        </div>
+
+        <div class="design-token-row reveal">
+          <div class="design-token-swatch token-particles-swatch">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span>
+          </div>
+          <div class="design-token-meta">
+            <div class="design-token-name">粒子背景 <span class="design-token-en">Particle Field</span></div>
+            <p class="design-token-desc">80 颗细粒, 18 秒走完一生, 从底部升起, 安静地飘。</p>
+          </div>
+        </div>
+
+        <div class="design-token-row reveal">
+          <div class="design-token-swatch token-glow-swatch">
+            <div class="token-glow-core"></div>
+          </div>
+          <div class="design-token-meta">
+            <div class="design-token-name">模糊发光 <span class="design-token-en">Soft Glow</span></div>
+            <p class="design-token-desc">文字三层光晕, 像被月色照亮 — 主时钟走这种光。</p>
+          </div>
+        </div>
+
+        <div class="design-token-row reveal">
+          <div class="design-token-swatch token-vignette-swatch"></div>
+          <div class="design-token-meta">
+            <div class="design-token-name">暗角 <span class="design-token-en">Vignette</span></div>
+            <p class="design-token-desc">边缘渐暗 30%, 让中央信息自然浮起, 像被聚光灯照着。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Apple 风 4 大原则 -->
+  <section class="section">
+    <div class="container">
+      <p class="section-eyebrow">设计原则</p>
+      <h2 class="section-title">留白, 克制, 动效, 排版。</h2>
+      <p class="section-subtitle">Apple 的克制, 是把"多余"也当作"内容"。</p>
+
+      <div class="design-principles">
+
+        <div class="design-principle reveal">
+          <div class="principle-num">01</div>
+          <h3 class="principle-name">留白</h3>
+          <p class="principle-desc">屏幕的 60% 是空白, 信息自己会浮起来 — 上下各空出 12vh + 18vh, 居中放主要内容。</p>
+        </div>
+
+        <div class="design-principle reveal">
+          <div class="principle-num">02</div>
+          <h3 class="principle-name">克制</h3>
+          <p class="principle-desc">能少 1 字就少 1 字, 能不强调就不强调 — 描述 15px, 标题 17px, 不堆粗体。</p>
+        </div>
+
+        <div class="design-principle reveal">
+          <div class="principle-num">03</div>
+          <h3 class="principle-name">动效</h3>
+          <p class="principle-desc">缓动曲线 + 400 毫秒, 不急不缓, 像一口气叹完 — 进入退出都用同一条曲线。</p>
+        </div>
+
+        <div class="design-principle reveal">
+          <div class="principle-num">04</div>
+          <h3 class="principle-name">排版</h3>
+          <p class="principle-desc">苹方 1.5 倍行高, 标题 600, 正文 400 — 中文英文各有合适的搭配, 不混。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta reveal">
+    <h2 class="cta-title">看灵境时钟在桌面上的样子。</h2>
+    <p class="cta-subtitle">免费, 89 MB, 装上就明白。</p>
+    <div class="cta-actions">
+      <a href="download.html" class="btn btn-primary">免费下载 <span class="arrow">›</span></a>
+      <a href="about.html" class="btn btn-ghost">看更多 <span class="arrow">›</span></a>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="nav-brand" style="margin-bottom:12px">
+            <span class="nav-brand-mark">灵</span>
+            <span style="color:var(--ink-900)">灵境时钟</span>
+          </div>
+          <p style="font-size:13px;color:var(--ink-500);max-width:280px;line-height:1.5">
+            一面映照你桌面的镜子。
+          </p>
+        </div>
+        <div>
+          <div class="footer-col-title">产品</div>
+          <a class="footer-link" href="download.html">下载</a>
+          <a class="footer-link" href="changelog.html">更新日志</a>
+        </div>
+        <div>
+          <div class="footer-col-title">了解</div>
+          <a class="footer-link" href="about.html">关于</a>
+          <a class="footer-link" href="design.html">设计语言</a>
+          <a class="footer-link" href="about.html#privacy">隐私</a>
+        </div>
+        <div>
+          <div class="footer-col-title">联系</div>
+          <a class="footer-link" href="https://github.com/yuandd2014/lingjing-clock" target="_blank" rel="noopener">代码仓库 ↗</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>Copyright © 2026 灵境时钟</div>
+        <div>由开发者独立制作</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/nav.js"></script>
+</body>
+</html>

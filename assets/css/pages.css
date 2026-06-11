@@ -1,4 +1,4 @@
-/* ============================================
+﻿/* ============================================
    页面特定样式
    ============================================ */
 
@@ -432,6 +432,658 @@
   padding: 22px 26px;
   box-shadow: 0 4px 24px rgba(99, 102, 241, 0.08);
 }
+
+/* ============================================
+   v1.3.1 — Hero 4 token 色块 (index.html)
+   ============================================ */
+.hero-tokens {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 760px;
+  margin: 56px auto 0;
+}
+.hero-token {
+  position: relative;
+  aspect-ratio: 1.5 / 1;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #0a0a0a;
+  border: 1px solid var(--ink-100);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 28px 24px 20px;
+  cursor: default;
+}
+.hero-token:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 44px rgba(99, 102, 241, 0.22);
+}
+
+/* 1. 毛玻璃 — 在复杂彩色背景上, 浮一个"天气小卡" */
+.hero-token-glass {
+  background:
+    radial-gradient(circle at 18% 22%, #f9a8d4 0%, transparent 32%),
+    radial-gradient(circle at 82% 78%, #a78bfa 0%, transparent 36%),
+    radial-gradient(circle at 50% 50%, #fcd34d 0%, transparent 50%),
+    linear-gradient(135deg, #1f1147 0%, #581c87 100%);
+}
+.hero-token-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%);
+  background-size: 14px 14px;
+  z-index: 0;
+}
+.hero-token-glass .hero-token-card {
+  position: relative;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(28px) saturate(2);
+  -webkit-backdrop-filter: blur(28px) saturate(2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  padding: 14px 22px;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  min-width: 78%;
+  text-align: left;
+}
+.hero-token-glass .glass-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.hero-token-glass .glass-card-icon {
+  font-size: 22px;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+/* 2. 粒子 — 深色, 加密 50 颗, 3-5px, 亮白 + 蓝青光晕 */
+.hero-token-particles {
+  background: linear-gradient(180deg, #050816 0%, #0f172a 50%, #1e1b4b 100%);
+}
+.hero-token-particles-field {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.hero-token-particles-field span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 1),
+    0 0 22px rgba(186, 230, 253, 0.95),
+    0 0 40px rgba(125, 211, 252, 0.55);
+}
+.hero-token-particles-field span:nth-child(3n) {
+  width: 3px; height: 3px;
+  background: #bae6fd;
+  box-shadow: 0 0 8px #bae6fd, 0 0 18px rgba(125,211,252,0.8);
+}
+.hero-token-particles-field span:nth-child(5n) {
+  width: 5px; height: 5px;
+  background: #fff;
+  box-shadow: 0 0 14px #fff, 0 0 28px rgba(186,230,253,0.9), 0 0 50px rgba(125,211,252,0.6);
+}
+.hero-token-particles-field span:nth-child(1)  { left:  4%; bottom:  8%; animation: ptRise 3.4s linear infinite; }
+.hero-token-particles-field span:nth-child(2)  { left:  9%; bottom: 22%; animation: ptRise 3.8s linear infinite .2s; }
+.hero-token-particles-field span:nth-child(3)  { left: 14%; bottom: 12%; animation: ptRise 3.4s linear infinite .4s; }
+.hero-token-particles-field span:nth-child(4)  { left: 19%; bottom: 32%; animation: ptRise 4.0s linear infinite .6s; }
+.hero-token-particles-field span:nth-child(5)  { left: 24%; bottom: 16%; animation: ptRise 3.5s linear infinite .8s; }
+.hero-token-particles-field span:nth-child(6)  { left: 29%; bottom: 26%; animation: ptRise 3.9s linear infinite 1.0s; }
+.hero-token-particles-field span:nth-child(7)  { left: 34%; bottom: 10%; animation: ptRise 3.3s linear infinite 1.2s; }
+.hero-token-particles-field span:nth-child(8)  { left: 39%; bottom: 28%; animation: ptRise 3.7s linear infinite 1.4s; }
+.hero-token-particles-field span:nth-child(9)  { left: 44%; bottom: 18%; animation: ptRise 4.1s linear infinite 1.6s; }
+.hero-token-particles-field span:nth-child(10) { left: 49%; bottom: 30%; animation: ptRise 3.6s linear infinite 1.8s; }
+.hero-token-particles-field span:nth-child(11) { left: 54%; bottom: 14%; animation: ptRise 3.8s linear infinite 2.0s; }
+.hero-token-particles-field span:nth-child(12) { left: 59%; bottom: 24%; animation: ptRise 3.4s linear infinite 2.2s; }
+.hero-token-particles-field span:nth-child(13) { left: 64%; bottom:  8%; animation: ptRise 3.9s linear infinite 2.4s; }
+.hero-token-particles-field span:nth-child(14) { left: 69%; bottom: 30%; animation: ptRise 3.5s linear infinite 2.6s; }
+.hero-token-particles-field span:nth-child(15) { left: 74%; bottom: 20%; animation: ptRise 4.0s linear infinite 2.8s; }
+.hero-token-particles-field span:nth-child(16) { left: 79%; bottom: 12%; animation: ptRise 3.6s linear infinite 3.0s; }
+.hero-token-particles-field span:nth-child(17) { left: 84%; bottom: 26%; animation: ptRise 3.8s linear infinite 3.2s; }
+.hero-token-particles-field span:nth-child(18) { left: 89%; bottom: 16%; animation: ptRise 3.4s linear infinite 3.4s; }
+.hero-token-particles-field span:nth-child(19) { left: 94%; bottom: 28%; animation: ptRise 4.1s linear infinite 3.6s; }
+.hero-token-particles-field span:nth-child(20) { left:  6%; bottom: 44%; animation: ptRise 3.7s linear infinite 3.8s; }
+.hero-token-particles-field span:nth-child(21) { left: 16%; bottom: 48%; animation: ptRise 3.5s linear infinite 4.0s; }
+.hero-token-particles-field span:nth-child(22) { left: 26%; bottom: 42%; animation: ptRise 3.9s linear infinite 4.2s; }
+.hero-token-particles-field span:nth-child(23) { left: 36%; bottom: 50%; animation: ptRise 3.6s linear infinite 4.4s; }
+.hero-token-particles-field span:nth-child(24) { left: 46%; bottom: 44%; animation: ptRise 4.0s linear infinite 4.6s; }
+.hero-token-particles-field span:nth-child(25) { left: 56%; bottom: 48%; animation: ptRise 3.4s linear infinite 4.8s; }
+.hero-token-particles-field span:nth-child(26) { left: 66%; bottom: 42%; animation: ptRise 3.8s linear infinite 5.0s; }
+.hero-token-particles-field span:nth-child(27) { left: 76%; bottom: 50%; animation: ptRise 3.5s linear infinite 5.2s; }
+.hero-token-particles-field span:nth-child(28) { left: 86%; bottom: 46%; animation: ptRise 3.7s linear infinite 5.4s; }
+.hero-token-particles-field span:nth-child(29) { left: 96%; bottom: 44%; animation: ptRise 3.9s linear infinite 5.6s; }
+.hero-token-particles-field span:nth-child(30) { left:  4%; bottom: 64%; animation: ptRise 3.6s linear infinite 5.8s; }
+.hero-token-particles-field span:nth-child(31) { left: 12%; bottom: 70%; animation: ptRise 4.0s linear infinite 6.0s; }
+.hero-token-particles-field span:nth-child(32) { left: 22%; bottom: 64%; animation: ptRise 3.4s linear infinite 6.2s; }
+.hero-token-particles-field span:nth-child(33) { left: 32%; bottom: 72%; animation: ptRise 3.8s linear infinite 6.4s; }
+.hero-token-particles-field span:nth-child(34) { left: 42%; bottom: 66%; animation: ptRise 3.5s linear infinite 6.6s; }
+.hero-token-particles-field span:nth-child(35) { left: 52%; bottom: 70%; animation: ptRise 3.9s linear infinite 6.8s; }
+.hero-token-particles-field span:nth-child(36) { left: 62%; bottom: 64%; animation: ptRise 3.6s linear infinite 7.0s; }
+.hero-token-particles-field span:nth-child(37) { left: 72%; bottom: 72%; animation: ptRise 4.1s linear infinite 7.2s; }
+.hero-token-particles-field span:nth-child(38) { left: 82%; bottom: 66%; animation: ptRise 3.7s linear infinite 7.4s; }
+.hero-token-particles-field span:nth-child(39) { left: 92%; bottom: 70%; animation: ptRise 3.5s linear infinite 7.6s; }
+.hero-token-particles-field span:nth-child(40) { left:  8%; bottom: 88%; animation: ptRise 3.8s linear infinite 7.8s; }
+.hero-token-particles-field span:nth-child(41) { left: 28%; bottom: 90%; animation: ptRise 3.4s linear infinite 8.0s; }
+.hero-token-particles-field span:nth-child(42) { left: 48%; bottom: 88%; animation: ptRise 4.0s linear infinite 8.2s; }
+.hero-token-particles-field span:nth-child(43) { left: 68%; bottom: 92%; animation: ptRise 3.6s linear infinite 8.4s; }
+.hero-token-particles-field span:nth-child(44) { left: 88%; bottom: 88%; animation: ptRise 3.7s linear infinite 8.6s; }
+.hero-token-particles-field span:nth-child(45) { left: 18%; bottom: 96%; animation: ptRise 3.5s linear infinite 8.8s; }
+.hero-token-particles-field span:nth-child(46) { left: 38%; bottom: 96%; animation: ptRise 3.9s linear infinite 9.0s; }
+.hero-token-particles-field span:nth-child(47) { left: 58%; bottom: 96%; animation: ptRise 3.4s linear infinite 9.2s; }
+.hero-token-particles-field span:nth-child(48) { left: 78%; bottom: 96%; animation: ptRise 3.8s linear infinite 9.4s; }
+.hero-token-particles-field span:nth-child(49) { left:  4%; bottom: 78%; animation: ptRise 3.6s linear infinite 9.6s; }
+.hero-token-particles-field span:nth-child(50) { left: 96%; bottom: 78%; animation: ptRise 3.5s linear infinite 9.8s; }
+@keyframes ptRise {
+  0%   { transform: translateY(0) scale(0.4); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateY(-220px) scale(1); opacity: 0; }
+}
+
+/* 3. 模糊发光 — 大"灵"字 + 5 层光晕 + 脉动 */
+.hero-token-glow {
+  background:
+    radial-gradient(circle at 50% 50%, #4c1d95 0%, #1e1b4b 50%, #050816 100%);
+  display: flex;
+  flex-direction: column;
+}
+.hero-token-glow .hero-token-glow-core {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 160px;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.85) 0%, rgba(186, 230, 253, 0.4) 30%, transparent 65%);
+  filter: blur(10px);
+  z-index: 1;
+  animation: glowCorePulse 2.8s ease-in-out infinite;
+}
+@keyframes glowCorePulse {
+  0%, 100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
+  50%      { opacity: 1;   transform: translate(-50%, -50%) scale(1.1); }
+}
+.demo-glyph {
+  position: relative;
+  z-index: 3;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -0.05em;
+  margin-bottom: 12px;
+  text-shadow:
+    0 0 20px rgba(255, 255, 255, 1),
+    0 0 40px rgba(186, 230, 253, 0.95),
+    0 0 60px rgba(175, 82, 222, 0.85),
+    0 0 80px rgba(175, 82, 222, 0.6),
+    0 0 110px rgba(175, 82, 222, 0.4);
+  animation: glyphPulse 2.6s ease-in-out infinite;
+}
+@keyframes glyphPulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.05); }
+}
+
+/* 4. 暗角 — 强暗角, 中央"22:30"漂浮, 边缘极暗 */
+.hero-token-vignette {
+  background:
+    radial-gradient(circle at 50% 45%, #fde68a 0%, #f9a8d4 35%, #a78bfa 70%, #1e1b4b 100%);
+  position: relative;
+}
+.hero-token-vignette::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 15%, rgba(0, 0, 0, 0.85) 100%);
+  border-radius: 22px;
+  z-index: 1;
+  pointer-events: none;
+}
+.demo-rest {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 14px 26px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  backdrop-filter: blur(2px);
+  margin-bottom: 12px;
+}
+.demo-rest-time {
+  font-size: 38px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.7), 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+.demo-rest-meta {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.95);
+  margin-top: 6px;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+
+/* 标签 — 移到最底部, 变小变细, 不再像"小横条" */
+.hero-token-name {
+  position: relative;
+  z-index: 3;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 6px;
+  margin-bottom: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.hero-token-desc {
+  position: relative;
+  z-index: 3;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.3;
+  margin-top: 3px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.hero-token-glass .hero-token-name { color: #fff; }
+.hero-token-particles .hero-token-name { color: #fff; }
+
+/* 毛玻璃卡内 demo-time / demo-meta 字体 */
+.demo-time {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e1b4b;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.demo-meta {
+  font-size: 11px;
+  color: rgba(30, 27, 75, 0.75);
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+/* === 关于页 灵境UI 4 token 块 (about.html) === */
+.design-link-row {
+  text-align: center;
+  margin-top: 36px;
+}
+.btn-tinted {
+  background: rgba(99, 102, 241, 0.08);
+  color: #4338ca;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.btn-tinted:hover {
+  background: rgba(99, 102, 241, 0.16);
+  transform: translateY(-1px);
+}
+
+/* 旧 .feature-swatch CSS 已废 (小横条, v1.3.1 删除) */
+
+/* ============================================
+   v1.3.1 — design.html 灵境UI 设计语言页
+   ============================================ */
+.design-hero {
+  padding: 96px 0 32px;
+  text-align: center;
+}
+.design-hero-title {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--ink-900);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 12px 0 8px;
+}
+.design-hero-subtitle {
+  font-size: 19px;
+  color: var(--ink-500);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* 大色块 4 token 合 1 — 深色底, 让所有 token 清晰可见 */
+.design-hero-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 360px;
+  margin: 56px auto 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 25% 30%, #831843 0%, transparent 40%),
+    radial-gradient(circle at 75% 70%, #1e1b4b 0%, transparent 40%),
+    linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #4c1d95 100%);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+}
+.canvas-glass {
+  position: absolute;
+  top: 40px; left: 40px; right: 40px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(28px) saturate(2);
+  -webkit-backdrop-filter: blur(28px) saturate(2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+.canvas-particles { position: absolute; inset: 0; }
+.canvas-particles span {
+  position: absolute;
+  width: 5px; height: 5px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 1),
+    0 0 24px rgba(186, 230, 253, 0.85),
+    0 0 40px rgba(125, 211, 252, 0.5);
+}
+.canvas-particles span:nth-child(1)  { left: 10%; bottom: 18%; animation: ptRise 5s linear infinite; }
+.canvas-particles span:nth-child(2)  { left: 18%; bottom:  8%; animation: ptRise 6s linear infinite .4s; }
+.canvas-particles span:nth-child(3)  { left: 28%; bottom: 22%; animation: ptRise 5.4s linear infinite .8s; }
+.canvas-particles span:nth-child(4)  { left: 38%; bottom: 12%; animation: ptRise 6.2s linear infinite 1.2s; }
+.canvas-particles span:nth-child(5)  { left: 48%; bottom: 28%; animation: ptRise 5.6s linear infinite 1.6s; }
+.canvas-particles span:nth-child(6)  { left: 58%; bottom: 16%; animation: ptRise 6.4s linear infinite 2s; }
+.canvas-particles span:nth-child(7)  { left: 68%; bottom:  6%; animation: ptRise 5.8s linear infinite 2.4s; }
+.canvas-particles span:nth-child(8)  { left: 78%; bottom: 20%; animation: ptRise 6.6s linear infinite 2.8s; }
+.canvas-particles span:nth-child(9)  { left: 88%; bottom: 28%; animation: ptRise 5.5s linear infinite 3.2s; }
+.canvas-particles span:nth-child(10) { left: 24%; bottom: 38%; animation: ptRise 6.0s linear infinite 3.6s; }
+.canvas-particles span:nth-child(11) { left: 42%; bottom: 44%; animation: ptRise 5.5s linear infinite 4s; }
+.canvas-particles span:nth-child(12) { left: 56%; bottom: 48%; animation: ptRise 6.2s linear infinite 4.4s; }
+.canvas-particles span:nth-child(13) { left: 72%; bottom: 42%; animation: ptRise 5.8s linear infinite 4.8s; }
+.canvas-particles span:nth-child(14) { left: 88%; bottom: 46%; animation: ptRise 6.4s linear infinite 5.2s; }
+.canvas-particles span:nth-child(15) { left: 14%; bottom: 56%; animation: ptRise 5.2s linear infinite 5.6s; }
+.canvas-particles span:nth-child(16) { left: 34%; bottom: 64%; animation: ptRise 6.1s linear infinite 6s; }
+.canvas-particles span:nth-child(17) { left: 52%; bottom: 70%; animation: ptRise 5.7s linear infinite 6.4s; }
+.canvas-particles span:nth-child(18) { left: 70%; bottom: 68%; animation: ptRise 6.3s linear infinite 6.8s; }
+.canvas-particles span:nth-child(19) { left: 86%; bottom: 62%; animation: ptRise 5.4s linear infinite 7.2s; }
+.canvas-particles span:nth-child(20) { left:  6%; bottom: 78%; animation: ptRise 6.0s linear infinite 7.6s; }
+.canvas-particles span:nth-child(21) { left: 22%; bottom: 86%; animation: ptRise 5.8s linear infinite 8s; }
+.canvas-particles span:nth-child(22) { left: 40%; bottom: 88%; animation: ptRise 6.2s linear infinite 8.4s; }
+.canvas-particles span:nth-child(23) { left: 58%; bottom: 84%; animation: ptRise 5.5s linear infinite 8.8s; }
+.canvas-particles span:nth-child(24) { left: 76%; bottom: 88%; animation: ptRise 6.0s linear infinite 9.2s; }
+.canvas-particles span:nth-child(25) { left: 92%; bottom: 80%; animation: ptRise 5.7s linear infinite 9.6s; }
+.canvas-glow {
+  position: absolute;
+  top: 60%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px; height: 100px;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 1) 0%, rgba(186, 230, 253, 0.6) 25%, rgba(175, 82, 222, 0.4) 50%, transparent 70%);
+  filter: blur(6px);
+  z-index: 2;
+  animation: canvasGlowPulse 3s ease-in-out infinite;
+}
+@keyframes canvasGlowPulse {
+  0%, 100% { opacity: 0.85; transform: translate(-50%, -50%) scale(1); }
+  50%      { opacity: 1;    transform: translate(-50%, -50%) scale(1.12); }
+}
+.canvas-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(0, 0, 0, 0.75) 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* 8 色主题色 — 2×4 网格 */
+.design-color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+@media (max-width: 980px) {
+  .design-color-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.design-color-card {
+  background: var(--bg);
+  border: 1px solid var(--ink-100);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.design-color-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+.design-color-swatch {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, var(--swatch-from), var(--swatch-to));
+}
+.design-color-card > *:not(.design-color-swatch) {
+  padding: 0 20px;
+}
+.design-color-card > .design-color-name { padding-top: 16px; }
+.design-color-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink-900);
+  letter-spacing: -0.01em;
+}
+.design-color-en {
+  font-size: 12px;
+  color: var(--ink-500);
+  font-family: var(--font-mono);
+  margin-top: 2px;
+}
+.design-color-when {
+  font-size: 13px;
+  color: var(--ink-500);
+  line-height: 1.5;
+  padding-bottom: 20px !important;
+  margin-top: 6px;
+}
+
+/* 4 视觉 token 行 */
+.design-token-list {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-top: 48px;
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.design-token-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--ink-100);
+  border-radius: 18px;
+  padding: 24px;
+  transition: transform 0.3s;
+}
+.design-token-row:hover { transform: translateX(4px); }
+@media (max-width: 720px) {
+  .design-token-row { grid-template-columns: 1fr; }
+}
+.design-token-swatch {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--ink-100);
+}
+.token-glass-swatch {
+  background:
+    radial-gradient(circle at 30% 30%, #f9a8d4 0%, transparent 35%),
+    radial-gradient(circle at 70% 70%, #a78bfa 0%, transparent 35%),
+    linear-gradient(135deg, #1f1147 0%, #581c87 100%);
+}
+.token-glass-swatch .token-glass-inner {
+  position: absolute;
+  inset: 18%;
+  background: rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(28px) saturate(2);
+  -webkit-backdrop-filter: blur(28px) saturate(2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.token-particles-swatch {
+  background: linear-gradient(180deg, #050816 0%, #0f172a 50%, #1e1b4b 100%);
+}
+.token-particles-swatch span {
+  position: absolute;
+  width: 4px; height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 1),
+    0 0 18px rgba(186, 230, 253, 0.85),
+    0 0 32px rgba(125, 211, 252, 0.5);
+}
+.token-particles-swatch span:nth-child(1) { left: 14%; bottom: 18%; animation: ptRise 3.4s linear infinite; }
+.token-particles-swatch span:nth-child(2) { left: 28%; bottom: 30%; animation: ptRise 4.0s linear infinite .4s; }
+.token-particles-swatch span:nth-child(3) { left: 44%; bottom: 12%; animation: ptRise 3.6s linear infinite .8s; }
+.token-particles-swatch span:nth-child(4) { left: 60%; bottom: 24%; animation: ptRise 4.2s linear infinite 1.2s; }
+.token-particles-swatch span:nth-child(5) { left: 76%; bottom: 16%; animation: ptRise 3.8s linear infinite 1.6s; }
+.token-particles-swatch span:nth-child(6) { left: 36%; bottom:  8%;  animation: ptRise 4.4s linear infinite 2s; }
+.token-particles-swatch span:nth-child(7) { left: 84%; bottom: 28%; animation: ptRise 3.5s linear infinite 2.4s; }
+.token-particles-swatch span:nth-child(8) { left: 18%; bottom: 36%; animation: ptRise 4.1s linear infinite 2.8s; }
+.token-particles-swatch span:nth-child(9) { left: 50%; bottom: 42%; animation: ptRise 3.7s linear infinite 3.2s; }
+.token-particles-swatch span:nth-child(10) { left: 70%; bottom: 38%; animation: ptRise 4.0s linear infinite 3.6s; }
+.token-particles-swatch span:nth-child(11) { left: 24%; bottom: 50%; animation: ptRise 3.6s linear infinite 4.0s; }
+.token-particles-swatch span:nth-child(12) { left: 56%; bottom: 54%; animation: ptRise 3.9s linear infinite 4.4s; }
+.token-glow-swatch {
+  background: radial-gradient(circle at 50% 50%, #4c1d95 0%, #1e1b4b 60%, #050816 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.token-glow-swatch .token-glow-core {
+  width: 70%; height: 70%;
+  background: radial-gradient(circle, #fff 0%, rgba(186, 230, 253, 0.5) 30%, transparent 60%);
+  filter: blur(8px);
+  animation: tokenGlowPulse 2.4s ease-in-out infinite;
+}
+@keyframes tokenGlowPulse {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.15); }
+}
+.token-vignette-swatch {
+  background:
+    radial-gradient(circle at 50% 45%, #fde68a 0%, #f9a8d4 35%, #a78bfa 70%, #1e1b4b 100%);
+}
+.token-vignette-swatch::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 18%, rgba(0, 0, 0, 0.85) 100%);
+  border-radius: 14px;
+}
+.design-token-name {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink-900);
+  margin-bottom: 4px;
+}
+.design-token-en {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-500);
+  font-family: var(--font-mono);
+  margin-left: 6px;
+}
+.design-token-desc {
+  font-size: 14px;
+  color: var(--ink-500);
+  line-height: 1.5;
+  margin: 8px 0 12px;
+}
+.design-token-code, .principle-code {
+  background: #1e1b4b;
+  color: #c7d2fe;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* 4 设计原则 */
+.design-principles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+@media (max-width: 720px) {
+  .design-principles { grid-template-columns: 1fr; }
+}
+.design-principle {
+  background: var(--bg);
+  border: 1px solid var(--ink-100);
+  border-radius: 18px;
+  padding: 28px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s;
+}
+.design-principle:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.12);
+}
+.principle-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-300);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+.principle-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink-900);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.principle-desc {
+  font-size: 14px;
+  color: var(--ink-500);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.principle-code { margin: 0; }
+
 .timeline-meta {
   display: flex;
   flex-wrap: wrap;

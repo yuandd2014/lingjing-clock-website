@@ -4,32 +4,32 @@
 
 这是 [灵境时钟 LingJing Clock](https://github.com/yuandd2014/lingjing-clock) 的官方宣传站点, 面向普通用户。
 
-**当前版本 · v1.3.0** — 主题色 8 色 + Splash 版本号动态化
+**当前版本 · v1.3.1** — Apple 风 UI 大幅升级 (官网 5 页 + 主仓 firstrun/settings 重做) + 安装包 brand assets 重烧
 
-[![下载 v1.3.0](https://img.shields.io/badge/下载-v1.3.0-0071e3?style=for-the-badge)](https://yuandd2014.github.io/lingjing-clock-website/download.html)
+[![下载 v1.3.1](https://img.shields.io/badge/下载-v1.3.1-0071e3?style=for-the-badge)](https://yuandd2014.github.io/lingjing-clock-website/download.html)
 [![主仓](https://img.shields.io/badge/主仓-lingjing--clock-8e8e93?style=flat-square)](https://github.com/yuandd2014/lingjing-clock)
 [![更新日志](https://img.shields.io/badge/更新日志-changelog-34c759?style=flat-square)](changelog.html)
 
 ---
 
-## 站点结构
+## 站点结构 (v1.3.1)
 
 ```
 website-site/
-├── index.html             # 主页 — Apple 风 Hero + 真实录屏 GIF
-├── changelog.html         # 更新日志 — v1.0.0 / v1.0.1 / v1.1.0 / v1.2.0 / v1.3.0
-├── download.html          # 下载 — 安装版 (89 MB) / 便携版 (89 MB)
-├── about.html             # 关于 — 项目由来 + 灵境UI 视觉 + 隐私
+├── index.html             # 主页 — Apple 风 Hero + 4 token 色块
+├── changelog.html         # 更新日志 — 4 段体验风 (砍技术细节)
+├── download.html          # 下载 — 安装版 / 便携版
+├── about.html             # 关于 — 项目由来 + 灵境UI 视觉 + 隐私 (timeline 已并入 changelog)
+├── design.html            # 灵境UI 设计语言 — 8 色 + 4 token + 4 原则 + CSS 代码块 (v1.3.1 新增)
 ├── assets/
 │   ├── css/
 │   │   ├── base.css       # 变量 + reset + 字体
 │   │   ├── apple.css      # 导航 + Hero + 按钮 + 卡片
-│   │   └── pages.css      # 各页特定样式
+│   │   └── pages.css      # 各页特定样式 (含 v1.3.1 .hero-tokens / .design-*)
 │   ├── js/
 │   │   └── nav.js         # 导航 + 滚动揭示
 │   └── img/
-│       ├── favicon.svg
-│       └── lingjing-demo.gif   # 真实录屏 GIF 主视觉
+│       └── favicon.svg
 └── README.md
 ```
 
@@ -39,7 +39,7 @@ website-site/
 - **SF Pro 字体** — 系统字体栈 (`-apple-system, BlinkMacSystemFont`)
 - **圆角 24-40px** + **多层柔和阴影**
 - **蓝色主调** — `#0071e3` (Apple Blue) + 紫粉极光渐变 (灵境UI 强调色)
-- **主视觉 GIF** — `assets/img/lingjing-demo.gif` 真实录屏, 显示完整灵境时钟运行画面
+- **主视觉截图** — `assets/img/lingjing-demo-*.png` 由 Electron `BrowserWindow.capturePage()` 实际跑 HTML 生成, 100% 真实, 无 AI 渲染
 
 ## 每次发布同步
 
